@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hamburger__menu {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.icon {
+    height: 50px;
+    cursor: pointer;
+}
+
+path {
+    fill: none;
+    stroke-width: 40px;
+    stroke-linecap: round;
+    stroke: white;
+    stroke-dashoffset: 0px;
+    transition: stroke-dashoffset .5s cubic-bezier(0.250,-0.250, 0.750, 1.250), stroke-dasharray .5s cubic-bezier(0.250,-0.250, 0.750, 1.250);
+}
+
+#top, #bottom {
+    stroke-dasharray: 240px 950px;
+}
+
+#middle {
+    stroke-dasharray: 240px 240px
+}
+
+.cross #top,
+.cross #bottom {
+    stroke-dashoffset: -650px;
+    stroke-dashoffset: -650px;
+}
+
+.cross #middle {
+    stroke-dashoffset: -115px;
+    stroke-dasharray: 1px 220px;
+}
+
+.mobile__menu {
+    background: white;
+    padding: 60px;
+    position: fixed;
+    top: 8%;
+    border-radius: 5px;
+    display: none;
+    z-index: 999;
+}
+
+.mobile__flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.menu__link:hover {
+    color: brown;
+}
+
+.menu__link:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.fade-in {
+    animation: fade-in .5s ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fade-out .5s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+    from {
+        visibility: hidden;
+        opacity: 0;
+    }
+    1% {
+        visibility: visible;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        visibility: visible;
+        opacity: 1;
+    }
+    99% {
+        visibility: visible;
+        opacity: 0;
+    }
+    to {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
